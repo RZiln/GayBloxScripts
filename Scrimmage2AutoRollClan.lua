@@ -1,10 +1,6 @@
 local roll = game:GetService("Workspace").Map.Clickable["Reroll Genetics - 4000$"].Head.ClickDetector
 local clanWanted =  {
-    "The other Tokita student",
-    "Hanma",
-    "Kure",
-    "Impure Hanma",
-    "Hanma"
+    "The other Tokita student"
 }
 local complete = false
 
