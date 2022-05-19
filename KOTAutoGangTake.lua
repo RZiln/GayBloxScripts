@@ -98,16 +98,12 @@ for i, v in pairs(game.Workspace:GetDescendants()) do
         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1)
     end
 end
-task.wait(5)
-game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
-    if State == Enum.TeleportState.Started then
-        syn.queue_on_teleport(loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/KOTAutoGangTake.lua", true))())
-    end
-end)
+task.wait(2)
 for i,v in pairs(Bases:GetDescendants()) do
     print(v)
     if v.Name == "Head" then
-        Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 150)
+        Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 300)
+        task.wait(2)
         punch()
         punch()
         task.wait(2)
