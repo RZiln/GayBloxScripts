@@ -105,7 +105,7 @@ for i,v in pairs(Bases:GetDescendants()) do
     print(v)
     if v.Name == "Head" then
         Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 300)
-        task.wait(2)
+        task.wait(3)
         punch()
         punch()
         task.wait(2)
