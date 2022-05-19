@@ -1,5 +1,7 @@
 repeat task.wait() until game:IsLoaded()
-local character = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+local player = game.Players.LocalPlayer
+local Character = player.Character or player.CharacterAdded:Wait()
+local character = character.HumanoidRootPart
 local Bases = game:GetService("Workspace").Bases
 local ts = game:GetService("TweenService")
 wait(5)
