@@ -1,6 +1,7 @@
+repeat task.wait() until game:IsLoaded()
 local Bases = game:GetService("Workspace").Bases
 local ts = game:GetService("TweenService")
-repeat task.wait() until game:IsLoaded()
+
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
