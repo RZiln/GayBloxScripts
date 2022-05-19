@@ -78,7 +78,7 @@ local function Tween(part, endpos, speed)
     if part and endpos then
         local Time = (endpos - part.Position).magnitude/speed
         local Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
-        local Tween = ts:Create(part,Info,{CFrame = CFrame.new(endpos.X,endpos.Y,endpos.Z -2)})
+        local Tween = ts:Create(part,Info,{CFrame = CFrame.new(endpos.X,endpos.Y,endpos.Z +2)})
         Tween:Play()
         wait(Time)
     end
