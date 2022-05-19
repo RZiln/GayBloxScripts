@@ -1,4 +1,5 @@
 repeat task.wait() until game:IsLoaded()
+local character = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
 local Bases = game:GetService("Workspace").Bases
 local ts = game:GetService("TweenService")
 
@@ -94,9 +95,9 @@ end
 
 for i, v in pairs(game.Workspace:GetDescendants()) do
     if v:IsA("TouchTransmitter") and v.Parent:FindFirstChild("Decal") then
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0)
+        firetouchinterest(character, v.Parent, 0)
         wait()
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1)
+        firetouchinterest(character, v.Parent, 1)
     end
 end
 task.wait(2)
