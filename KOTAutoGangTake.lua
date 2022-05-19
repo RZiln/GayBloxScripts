@@ -1,6 +1,6 @@
 local Bases = game:GetService("Workspace").Bases
 local ts = game:GetService("TweenService")
-
+repeat task.wait() until game:IsLoaded()
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
@@ -98,13 +98,19 @@ for i, v in pairs(game.Workspace:GetDescendants()) do
         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1)
     end
 end
-
+task.wait(5)
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+    if State == Enum.TeleportState.Started then
+        syn.queue_on_teleport(loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/KOTAutoGangTake.lua", true))())
+    end
+end)
 for i,v in pairs(Bases:GetDescendants()) do
     print(v)
     if v.Name == "Head" then
         Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 150)
         punch()
         punch()
+        task.wait(2)
         Teleport()
         break
     end
