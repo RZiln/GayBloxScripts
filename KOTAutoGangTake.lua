@@ -2,7 +2,7 @@ repeat task.wait() until game:IsLoaded()
 local character = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
 local Bases = game:GetService("Workspace").Bases
 local ts = game:GetService("TweenService")
-
+wait(5)
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
@@ -105,7 +105,7 @@ for i,v in pairs(Bases:GetDescendants()) do
     print(v)
     if v.Name == "Head" then
         Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 300)
-        task.wait(2)
+        task.wait()
         punch()
         punch()
         task.wait(2)
