@@ -1,6 +1,11 @@
 print("Gang Taker executed")
+
+game:GetService("Players").PlayerAdded:Wait()
+
+wait(3)
+
 repeat task.wait() until game:IsLoaded()
-wait(5)
+
 local player = game.Players.LocalPlayer
 local Character = player.Character or player.CharacterAdded:Wait()
 local character = Character.HumanoidRootPart
