@@ -1,10 +1,11 @@
 repeat task.wait() until game:IsLoaded()
+wait(5)
 local player = game.Players.LocalPlayer
 local Character = player.Character or player.CharacterAdded:Wait()
 local character = Character.HumanoidRootPart
 local Bases = game:GetService("Workspace").Bases
 local ts = game:GetService("TweenService")
-wait(5)
+
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
