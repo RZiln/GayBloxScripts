@@ -1,11 +1,6 @@
 print("Gang Taker executed")
-
-game:GetService("Players").PlayerAdded:Wait()
-
-wait(3)
-
 repeat task.wait() until game:IsLoaded()
-
+wait(5)
 local player = game.Players.LocalPlayer
 local Character = player.Character or player.CharacterAdded:Wait()
 local character = Character.HumanoidRootPart
@@ -115,6 +110,7 @@ for i, v in pairs(game.Workspace:GetDescendants()) do
 end
 task.wait(2)
 for i,v in pairs(Bases:GetDescendants()) do
+    print(v)
     if v.Name == "Head" then
         Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 300)
         task.wait(1)
