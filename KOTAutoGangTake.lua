@@ -1,3 +1,4 @@
+print("Gang Taker executed")
 repeat task.wait() until game:IsLoaded()
 wait(5)
 local player = game.Players.LocalPlayer
@@ -93,7 +94,7 @@ local function punch()
         local A_2 = 1
         local Event = game:GetService("Players").LocalPlayer.Backpack.zoom.boom.accion
         Event:FireServer(A_1, A_2)
-        task.wait()
+        task.wait(.18)
 end
 
 for i, v in pairs(game.Workspace:GetDescendants()) do
@@ -108,11 +109,15 @@ for i,v in pairs(Bases:GetDescendants()) do
     print(v)
     if v.Name == "Head" then
         Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 300)
-        task.wait(3)
-        punch()
-        punch()
+        task.wait(1)
+        repeat punch() until v.Parent.Owner.Value == 6366424
         task.wait(2)
         Teleport()
+        game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+            if State == Enum.TeleportState.Started then
+                syn.queue_on_teleport(loadstring(game:HttpGet('https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/KOTAutoGangTake.lua'))())
+            end
+        end)
         break
     end
 end
