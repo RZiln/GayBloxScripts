@@ -77,11 +77,6 @@ function Teleport()
 end
 
 -- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
-game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
-    if State == Enum.TeleportState.Started then
-        syn.queue_on_teleport(loadstring(game:HttpGet('https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/KOTAutoGangTake.lua'))())
-    end
-end)
 
 local function Tween(part, endpos, speed)
     if part and endpos then
@@ -100,24 +95,25 @@ local function punch()
         Event:FireServer(A_1, A_2)
         task.wait(.18)
 end
-
-for i, v in pairs(game.Workspace:GetDescendants()) do
-    if v:IsA("TouchTransmitter") and v.Parent:FindFirstChild("Decal") then
-        firetouchinterest(character, v.Parent, 0)
-        wait()
-        firetouchinterest(character, v.Parent, 1)
+pcall(function()
+    for i, v in pairs(game.Workspace:GetDescendants()) do
+        if v:IsA("TouchTransmitter") and v.Parent:FindFirstChild("Decal") then
+            firetouchinterest(character, v.Parent, 0)
+            wait()
+            firetouchinterest(character, v.Parent, 1)
+        end
     end
-end
+end)
+
 task.wait(2)
 for i,v in pairs(Bases:GetDescendants()) do
-    print(v)
     if v.Name == "Head" then
         Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Position, 300)
         task.wait(1)
         repeat punch() until v.Parent.Owner.Value == 6366424
         task.wait(2)
         Teleport()
-        
+        Teleport()
         break
     end
 end
