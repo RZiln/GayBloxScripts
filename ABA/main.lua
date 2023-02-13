@@ -1,10 +1,5 @@
 _G.MinTimer = 60
-
-game:GetService("Players").PlayerAdded:Wait()
-
-wait(3)
-
-
+task.wait(3)
 local function notify(text)
     game.StarterGui:SetCore("SendNotification", {
 		Title = "RZiln's AFK hop";
