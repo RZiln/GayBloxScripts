@@ -1,7 +1,11 @@
+game:GetService("Players").PlayerAdded:Wait()
+
+task.wait(5)
+
+
 _G.MinTimer = 60
 
 
-wait(3)
 
 local function notify(text)
     game.StarterGui:SetCore("SendNotification", {
