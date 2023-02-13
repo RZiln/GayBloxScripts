@@ -1,7 +1,9 @@
 game:GetService("Players").PlayerAdded:Wait()
 
 task.wait(5)
-
+repeat task.wait(1)
+    
+until game.Workspace.Message
 
 _G.MinTimer = 60
 
