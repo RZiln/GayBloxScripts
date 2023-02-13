@@ -12,15 +12,11 @@ local function notify(text)
 end
 
 if game.GameId == 578392296 then
-
-    game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
-        if State == Enum.TeleportState.Started then
-            syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/main.lua", true))()')
-        end
-    end)
+            
     
     if game.PlaceId ~= 5411459567 then
         notify("Joining AFK World")
+        syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/main.lua", true))()')
         game:GetService('TeleportService'):Teleport(5411459567)
     end
     notify("AFK Hop running")
@@ -35,9 +31,11 @@ if game.GameId == 578392296 then
         repeat task.wait() until timerCheck() > _G.MinTimer
         notify("Server Hopping")
         task.wait(1)
+        syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/main.lua", true))()')
         loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/ServerHop.lua", true))()
     else
         notify("Server Hopping")
+        syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/main.lua", true))()')
         loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/ServerHop.lua", true))()
     end
 
