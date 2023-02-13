@@ -1,6 +1,5 @@
 _G.MinTimer = 60
 
-game:GetService("Players").PlayerAdded:Wait()
 
 wait(3)
 
