@@ -1,10 +1,11 @@
 game:GetService("Players").PlayerAdded:Wait()
 
 task.wait(5)
+if game.PlaceId == 5411459567 then
 repeat task.wait(1)
     
 until game.Workspace.Message
-
+end
 _G.MinTimer = 60
 
 
