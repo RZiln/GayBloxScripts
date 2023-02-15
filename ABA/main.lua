@@ -1,5 +1,8 @@
 game:GetService("Players").PlayerAdded:Wait()
 task.wait(5)
+
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+setfpscap(10)
 if game.PlaceId == 5411459567 then
     repeat task.wait(1) until game.Workspace.Message
 end
@@ -20,6 +23,7 @@ if game.GameId == 578392296 then
             'loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/main.lua", true))()')
         game:GetService('TeleportService'):Teleport(5411459567)
     end
+
     notify("AFK Hop running")
     local function timerCheck()
         local timer = game.Workspace.Message.Text:split(" ")
