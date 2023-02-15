@@ -1,6 +1,5 @@
 game:GetService("Players").PlayerAdded:Wait()
 task.wait(5)
-print("executed")
 if game.PlaceId == 5411459567 then
     repeat task.wait(1) until game.Workspace.Message
 end
@@ -15,7 +14,6 @@ local function notify(text)
 end
 
 if game.GameId == 578392296 then
-    print("Running")
     if game.PlaceId ~= 5411459567 then
         notify("Joining AFK World")
         syn.queue_on_teleport(
