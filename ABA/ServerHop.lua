@@ -3,7 +3,7 @@
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
-local actualHour = os.date("!*t").min
+local actualHour = math.floor(os.date("!*t").min/10)
 local Deleted = false
 local File = pcall(function()
     AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
